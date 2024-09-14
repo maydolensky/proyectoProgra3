@@ -1,17 +1,30 @@
-function App() {
-  const name= 'May';
-  const pelis= ['Harry Potter', 'El código Da Vinci', 'Avengers'];
+import Navbar from "./components/Navbar/Navbar";
+import { Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import VerPopular from "./pages/VerPopular";
+import VerMejorPuntuadas from "./pages/VerMejorPuntuadas";
+import Detalle from "./pages/Detalle";
+import Favoritos from "./pages/Favoritos";
+import Search from "./pages/Search";
+import NotFound from "./pages/NotFound";
 
+function App() {
   return (
-    <div>
-      <h1>Mi primera app en react</h1>
-      <img src=" https://definicion.de/wp-content/uploads/2009/12/paisaje-1.jpg "/>
-      <p>Mi nombre es {name}</p>
-      <h2>Las últimas 3 películas que ví son: </h2>
-      <ul>
-        {pelis.map(peli => <li>{peli}</li>)}
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/VerPopular/id/:id" component={VerPopular} />
+        <Route path="/VerMejorPuntuadas/id/:id" component={VerMejorPuntuadas} />
+        <Route path="/Detalle" component={Detalle} />
+        <Route path="/Favoritos" component={Favoritos} />
+        <Route path="/Search/:id" component={Search} />
+        <Route path="" component={NotFound} />
+      </Switch>
+      <footer>
+        <p></p>
+      </footer>
+    </>
   );
 }
 
