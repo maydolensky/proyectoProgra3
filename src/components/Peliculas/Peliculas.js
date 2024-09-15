@@ -1,4 +1,3 @@
-
 import {Component} from "react"
 import PeliculaGrid from "../PeliculaGrid/PeliculaGrid"
 class Peliculas extends Component{
@@ -9,7 +8,7 @@ class Peliculas extends Component{
         }
     }
     componentDidMount(){
-        fetch('')
+        fetch()
             .then( response => response.json() )
             .then( data => this.setState(
                 {Peliculas: data.results}
@@ -21,7 +20,7 @@ class Peliculas extends Component{
         
         return (
             <>
-                <section className='card-container'>
+                <section>
                     { this.state.Peliculas.length > 0 ?
                     this.state.Peliculas.map((pelicula, index) => <PeliculaGrid pelicula ={pelicula} key ={index} /> )
                     : 
