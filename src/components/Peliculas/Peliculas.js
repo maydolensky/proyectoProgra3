@@ -23,7 +23,7 @@ class Peliculas extends Component{
             <>
                 <section>
                     { this.state.Peliculas.length > 0 ?
-                    this.state.Peliculas.map((pelicula, index) => <PeliculaGrid pelicula ={pelicula} key ={index} /> )
+                    this.state.Peliculas.map((pelicula, index) => (<PeliculaGrid pelicula ={pelicula} key ={index} />) )
                     : 
                     <p>Cargando...</p>  }
                 </section>
