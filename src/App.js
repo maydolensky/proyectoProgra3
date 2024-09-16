@@ -6,8 +6,8 @@ import VerPopular from "./pages/VerPopular";
 import VerMejorPuntuadas from "./pages/VerMejorPuntuadas";
 import Detalle from "./pages/Detalle";
 import Favoritos from "./pages/Favoritos";
-import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   let menu = [
@@ -27,7 +27,7 @@ function App() {
             <Route path="/VerMejorPuntuadas/id/:id" component={VerMejorPuntuadas} />
             <Route path="/Detalle" component={Detalle} />
             <Route path="/Favoritos" component={Favoritos} />
-            <Route path="/Search/:id" component={Search} />
+            <Route path="/Search/:id" component={SearchResults} />
             <Route path="" component={NotFound} />
         </Switch>
         </main>
