@@ -8,6 +8,7 @@ import Detalle from "./pages/Detalle";
 import Favoritos from "./pages/Favoritos";
 import NotFound from "./pages/NotFound";
 import SearchResults from "./pages/SearchResults";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   let menu = [
@@ -31,10 +32,9 @@ function App() {
             <Route path="" component={NotFound} />
         </Switch>
         </main>
+        <Footer/>
           </Router>
-      <footer>
-        <p></p>
-      </footer>
+      
     </React.Fragment>
   );
 }

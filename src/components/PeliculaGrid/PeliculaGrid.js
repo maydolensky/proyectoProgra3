@@ -1,13 +1,14 @@
 import Peliculas from "../Peliculas/Peliculas";
+import Card from "../Card/Card"
 
 const PeliculaGrid = (props) => {
-
     
-
-
     return (
         <section >
-            <h3>{props.pelicula.title}</h3>
+                    { props.peliculas.length > 0 ?
+                    props.peliculas.map((pelicula, index) => (<Card pelicula ={pelicula} key ={index} />) )
+                    : 
+                    <p>Cargando...</p>  }
 
             
         </section>

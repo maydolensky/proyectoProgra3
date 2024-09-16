@@ -5,14 +5,17 @@ class Peliculas extends Component{
     constructor(props){
         super(props)
         this.state ={
-            Peliculas: []
+            url: this.props.url,
+            title: this.props.title,
+            link: this.props.link,
+            peliculas: []
         }
     }
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+        fetch(this.props.url, options)
             .then( response => response.json() )
             .then( data => this.setState(
-                {Peliculas: data.results}
+                {peliculas: data.results}
                 ))
             .catch( error => console.log(error) );
 
@@ -21,13 +24,12 @@ class Peliculas extends Component{
         
         return (
             <>
-                <section>
-                    { this.state.Peliculas.length > 0 ?
-                    this.state.Peliculas.map((pelicula, index) => (<PeliculaGrid pelicula ={pelicula} key ={index} />) )
-                    : 
-                    <p>Cargando...</p>  }
-                </section>
 
+                <section>
+                   <h2>{this.props.title}</h2>
+
+                    <PeliculaGrid  peliculas = {this.state.peliculas} />
+                </section>
 
             </>
         )
