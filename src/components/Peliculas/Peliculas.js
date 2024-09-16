@@ -1,5 +1,6 @@
 import {Component} from "react"
 import PeliculaGrid from "../PeliculaGrid/PeliculaGrid"
+import { options } from "../../options"
 class Peliculas extends Component{
     constructor(props){
         super(props)
@@ -8,7 +9,7 @@ class Peliculas extends Component{
         }
     }
     componentDidMount(){
-        fetch()
+        fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
             .then( response => response.json() )
             .then( data => this.setState(
                 {Peliculas: data.results}
