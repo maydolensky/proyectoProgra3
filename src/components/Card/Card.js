@@ -24,16 +24,21 @@ class Card extends Component {
     render(props) {
 
          return (
-        <div >
+    
+        <div className="pelis-card">
                 <img src={`https://image.tmdb.org/t/p/w300/${this.props.pelicula.poster_path}`} alt={this.props.pelicula.title} />
                 <h4>  {this.props.pelicula.title} </h4>
-                <button  onClick={()=>this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}</button>
+                <button className="button" onClick={()=>this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}</button>
             <section className='extra'>
                 <p className={this.state.showExtra ? "show" : "hide"}> {this.props.pelicula.overview} </p> 
             </section>
-            
+            <Link to = "/Detalle">
+                <button className="button">{"Ver detalle"}</button>
+            </Link>
+             
                 
         </div>
+  
         );
     };
 }
