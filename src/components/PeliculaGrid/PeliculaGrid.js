@@ -1,4 +1,3 @@
-import Peliculas from "../Peliculas/Peliculas";
 import Card from "../Card/Card"
 
 const PeliculaGrid = (props) => {
