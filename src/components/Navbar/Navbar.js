@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Navbar.css"
+import SearchForm from '../SearchForm/SearchForm';
 
 function Navbar(props){
 

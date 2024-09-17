@@ -11,12 +11,14 @@ import SearchResults from "./pages/SearchResults";
 import Footer from "./components/Footer/Footer";
 import SearchForm from "./components/SearchForm/SearchForm";
 
-function App() {
+function App(props) {
   let menu = [
     'nombreGrupo',
     'Home',
     'Favoritos',
     'Ver todas',
+    <SearchForm history={PaymentResponse.history}/> 
+
   ]
   return (
     <React.Fragment>
