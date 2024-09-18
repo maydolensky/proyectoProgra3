@@ -13,10 +13,10 @@ import SearchForm from "./components/SearchForm/SearchForm";
 
 function App(props) {
   let menu = [
+    { name: 'Home', link: '/' },
+    { name: 'Favoritos', link: '/Favoritos' },
+    { name: 'Ver todas', link: '/vertodas' },
     'nombreGrupo',
-    'Home',
-    'Favoritos',
-    'Ver todas',
     <SearchForm history={PaymentResponse.history}/> 
 
   ]
