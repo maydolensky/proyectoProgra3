@@ -18,7 +18,6 @@ function App(props) {
     { name: 'Populares', link: '/VerPopular' },
     { name: 'Mejores Puntuadas', link: 'VerMejorPuntuadas' },
     //Preguntar si hay que agregar 'nombreGrupo', 
-
     <SearchForm history={PaymentResponse.history} />
 
   ]
