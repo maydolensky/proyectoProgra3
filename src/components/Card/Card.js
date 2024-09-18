@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Component } from 'react';
 import "./Card.css"
+import FavButton from "../FavButton/FavButton"
 
 
 class Card extends Component {
@@ -33,6 +34,7 @@ class Card extends Component {
                 <Link to="/Detalle">
                     <button className="button">{"Ver detalle"}</button>
                 </Link>
+                <FavButton idPelicula={pelicula.id} />
                 
 
             </div>
