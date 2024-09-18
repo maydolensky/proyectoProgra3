@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import VerPopular from "./pages/VerPopular";
 import VerMejorPuntuadas from "./pages/VerMejorPuntuadas";
@@ -15,31 +15,31 @@ function App(props) {
   let menu = [
     { name: 'Home', link: '/' },
     { name: 'Favoritos', link: '/Favoritos' },
-    { name: 'Populares', link: '/vertodas' },
-    { name: 'Mejores Puntuadas'},
-   //Preguntar si hay que agregar 'nombreGrupo', 
+    { name: 'Populares', link: '/VerPopular' },
+    { name: 'Mejores Puntuadas', link: 'VerMejorPuntuadas' },
+    //Preguntar si hay que agregar 'nombreGrupo', 
 
-    <SearchForm history={PaymentResponse.history}/> 
+    <SearchForm history={PaymentResponse.history} />
 
   ]
   return (
     <React.Fragment>
-        <Navbar elementosMenu ={menu}  />
       <Router>
+        <Navbar elementosMenu={menu} />
         <main>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/VerPopular/id/:id" component={VerPopular} />
-            <Route path="/VerMejorPuntuadas/id/:id" component={VerMejorPuntuadas} />
-            <Route path="/Detalle" component={Detalle} />
+            <Route path="/VerPopular" component={VerPopular} />
+            <Route path="/VerMejorPuntuadas" component={VerMejorPuntuadas} />
+            <Route path="/Detalle/id/:id" component={Detalle} />
             <Route path="/Favoritos" component={Favoritos} />
             <Route path="/SearchResults" component={SearchResults} />
             <Route path="" component={NotFound} />
-        </Switch>
+          </Switch>
         </main>
-        <Footer/>
-          </Router>
-      
+        <Footer />
+      </Router>
+
     </React.Fragment>
   );
 }
