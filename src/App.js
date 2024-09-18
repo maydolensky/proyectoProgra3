@@ -17,7 +17,7 @@ function App(props) {
     { name: 'Favoritos', link: '/Favoritos' },
     { name: 'Populares', link: '/vertodas' },
     { name: 'Mejores Puntuadas'},
-    'nombreGrupo', 
+   //Preguntar si hay que agregar 'nombreGrupo', 
 
     <SearchForm history={PaymentResponse.history}/> 
 
