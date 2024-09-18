@@ -15,8 +15,10 @@ function App(props) {
   let menu = [
     { name: 'Home', link: '/' },
     { name: 'Favoritos', link: '/Favoritos' },
-    { name: 'Ver todas', link: '/vertodas' },
-    'nombreGrupo',
+    { name: 'Populares', link: '/vertodas' },
+    { name: 'Mejores Puntuadas'},
+    'nombreGrupo', 
+
     <SearchForm history={PaymentResponse.history}/> 
 
   ]
