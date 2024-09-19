@@ -9,16 +9,14 @@ import Favoritos from "./pages/Favoritos";
 import NotFound from "./pages/NotFound";
 import SearchResults from "./pages/SearchResults";
 import Footer from "./components/Footer/Footer";
-import SearchForm from "./components/SearchForm/SearchForm";
 
-function App(props) {
+function App() {
   let menu = [
     { name: 'Home', link: '/' },
     { name: 'Favoritos', link: '/Favoritos' },
     { name: 'Populares', link: '/VerPopular' },
     { name: 'Mejores Puntuadas', link: 'VerMejorPuntuadas' },
     //Preguntar si hay que agregar 'nombreGrupo', 
-    <SearchForm history={PaymentResponse.history} />
 
   ]
   return (
