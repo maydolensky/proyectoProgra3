@@ -27,7 +27,7 @@ class Card extends Component {
             <div className="pelis-card">
                 <Link to={`/Detalle/id/${pelicula.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w300/${this.props.pelicula.poster_path}`} alt={this.props.pelicula.title} />
-                </Link>
+                    </Link>
                 <h4>  {this.props.pelicula.title} </h4>
                 <button className="button" onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}</button>
                 <section className='extra'>
