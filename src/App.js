@@ -15,7 +15,7 @@ function App() {
     { name: 'Home', link: '/' },
     { name: 'Favoritos', link: '/Favoritos' },
     { name: 'Populares', link: '/VerPopular' },
-    { name: 'Mejores Puntuadas', link: 'VerMejorPuntuadas' },
+    { name: 'Mejores Puntuadas', link: '/VerMejorPuntuadas' },
     //Preguntar si hay que agregar 'nombreGrupo', 
 
   ]
