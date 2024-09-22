@@ -2,6 +2,7 @@ import Card from "../Card/Card"
 import "./PeliculaGrid.css"
 
 const PeliculaGrid = (props) => {
+    console.log("Películas recibidas en PeliculaGrid:", props.peliculas); // Verificar las películas recibidas
     const peliculasLimitadas = props.peliculas.filter((pelicula, index) => index < 5);
     return (
         <section  className="card-container">
