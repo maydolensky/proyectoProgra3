@@ -25,16 +25,18 @@ class Card extends Component {
         return (
 
             <div className="pelis-card">
-                <img src={`https://image.tmdb.org/t/p/w300/${this.props.pelicula.poster_path}`} alt={this.props.pelicula.title} />
+                <Link to={`/Detalle/id/${pelicula.id}`}>
+                    <img src={`https://image.tmdb.org/t/p/w300/${this.props.pelicula.poster_path}`} alt={this.props.pelicula.title} />
+                </Link>
                 <h4>  {this.props.pelicula.title} </h4>
                 <button className="button" onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}</button>
                 <section className='extra'>
                     <p className={this.state.showExtra ? "show" : "hide"}> {this.props.pelicula.overview} </p>
                 </section>
-                <Link to="/Detalle">
-                    <button className="button">{"Ver detalle"}</button>
+                <Link to={`/Detalle/id/${pelicula.id}`}>
+                    <button className="button">Ver detalle</button>
                 </Link>
-                <FavButton idPelicula={pelicula.id} />
+                <FavButton idPelicula={this.props.pelicula.id} />
                 
 
             </div>
