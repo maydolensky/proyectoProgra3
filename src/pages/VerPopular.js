@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { options } from "../options";
 import PeliculaGrid from "../components/PeliculaGrid/PeliculaGrid";
+import Loader from '../components/Loader/Loader';
 
 export default class VerPopular extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ export default class VerPopular extends Component {
       value: 1,
       peliculas: [],
       PelisFiltradas: [],
-      filterValue: ""
+      filterValue: "",
+      loading: true
     }
   }
   handleIncrement() {
@@ -19,39 +21,66 @@ export default class VerPopular extends Component {
       .then(data => this.setState(pelisAntes => ({
         peliculas: this.state.peliculas.concat(data.results),
         PelisFiltradas: this.state.peliculas.concat(data.results),
+        loading: false,
         value: mas
       })))
-      .catch(error => console.log(error));
+      .catch((error) => {
+        this.setState({ loading: false })
+        console.log(error)
+
+    });
   };
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${this.state.value}`, options)
       .then(response => response.json())
-      .then(data => this.setState({ peliculas: data.results, PelisFiltradas: data.results}))
-      .catch(error => console.log(error));
+      .then(data => this.setState({ peliculas: data.results, PelisFiltradas: data.results, loading: false }))
+      .catch((error) => {
+        this.setState({ loading: false })
+        console.log(error)
+
+    });
+    }
+  handleFilterChange(e) {
+    const userValue = e.target.value
+    this.setState({
+      filterValue: userValue,
+      PelisFiltradas: this.state.peliculas.filter(peliculas => peliculas.title.toLowerCase().includes(userValue.toLowerCase()))
+    })
   }
-handleFilterChange(e){
-  const userValue = e.target.value
-  this.setState({
-    filterValue: userValue,
-    PelisFiltradas: this.state.peliculas.filter(peliculas => peliculas.title.toLowerCase().includes(userValue.toLowerCase()))
-  })
-}
-handleResetFilter(){
-  this.setState({
-    filterValue: "",
-    PelisFiltradas: this.state.peliculas
-  })
-}
+  handleResetFilter() {
+    this.setState({
+      filterValue: "",
+      PelisFiltradas: this.state.peliculas
+    })
+  }
   render() {
-    return (
-      <>
-        <h1>Peliculas Populares</h1>
-        <input type="text" onChange={(e)=> this.handleFilterChange(e)} value= {this.state.filterValue}/>
-        <button onClick={()=> this.handleResetFilter()}>Reset Filter</button>
-        <PeliculaGrid peliculas={this.state.PelisFiltradas} />
-        <button onClick={() => this.handleIncrement()}>Ver mas</button>
-      </>
-    )
+
+    if (this.state.loading) {
+      return <Loader/>
+
+    }
+    else if (this.state.PelisFiltradas.length === 0) {
+
+      return (<div>
+        <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
+        <button onClick={() => this.handleResetFilter()}>Resetear Filtro</button>
+        <p>  No encontramos resultados de busqueda </p>
+        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
+
+
+    } else {
+
+      return (
+        <>
+          <h1>Peliculas Populares</h1>
+          <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
+          <button onClick={() => this.handleResetFilter()}>Reset Filter</button>
+          <PeliculaGrid peliculas={this.state.PelisFiltradas} />
+          <button onClick={() => this.handleIncrement()}>Ver mas</button>
+        </>
+      )
+
+    }
   }
 }
 
