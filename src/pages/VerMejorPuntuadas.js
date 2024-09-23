@@ -1,4 +1,4 @@
-    {/*   import React, { Component } from 'react'
+{/*   import React, { Component } from 'react'
         import {options} from "../options";
         import PeliculaGrid from "../components/PeliculaGrid/PeliculaGrid";
 

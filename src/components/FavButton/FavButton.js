@@ -14,8 +14,8 @@ class FavButton extends Component {
         if (storage) {
             const parsedArray = JSON.parse(storage);
             const estaEnFavs = parsedArray.includes(this.props.idPelicula);
-            this.setState({ 
-                esFav: estaEnFavs 
+            this.setState({
+                esFav: estaEnFavs
             });
         }
     }
@@ -23,7 +23,7 @@ class FavButton extends Component {
     agregarFavs = () => {
         const storage = localStorage.getItem('favoritos');
         let parsedArray = storage ? JSON.parse(storage) : [];
-        
+
         if (!parsedArray.includes(this.props.idPelicula)) {
             parsedArray.push(this.props.idPelicula);
             localStorage.setItem('favoritos', JSON.stringify(parsedArray));
@@ -43,7 +43,7 @@ class FavButton extends Component {
 
     render() {
         return (
-            <button 
+            <button
                 onClick={() => this.state.esFav ? this.sacarFavs() : this.agregarFavs()}
                 className="favorite-button"
             >

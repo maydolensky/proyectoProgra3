@@ -3,13 +3,13 @@ import Peliculas from '../components/Peliculas/Peliculas';
 import SearchForm from '../components/SearchForm/SearchForm';
 
 function Home(props) {
-  return(
+  return (
     <>
-      <div className="formBusqueda" > <SearchForm history={props.history}/>  </div>  
+      <div className="formBusqueda" > <SearchForm history={props.history} />  </div>
 
-    <Peliculas title = "Peliculas populares" url = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1" link = "/VerPopular"  />
-    <Peliculas title = "Peliculas mejores puntuadas" url = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1' link= "/VerMejorPuntuadas" />
-    
+      <Peliculas title="Peliculas populares" url="https://api.themoviedb.org/3/movie/popular?language=en-US&page=1" link="/VerPopular" />
+      <Peliculas title="Peliculas mejores puntuadas" url='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1' link="/VerMejorPuntuadas" />
+
     </>
   )
 }

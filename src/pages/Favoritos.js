@@ -25,7 +25,7 @@ class Favoritos extends Component {
                 ) : (
                     <Peliculas
                         title="Mis películas favoritas"
-                        favoritosIds={favoritosIds}  
+                        favoritosIds={favoritosIds}
                     />
                 )}
             </div>

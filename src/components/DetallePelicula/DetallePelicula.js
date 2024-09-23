@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import FavButton from '../FavButton/FavButton';
 import { options } from '../../options';
+import './DetallePelicula.css'
 
 class DetallePelicula extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pelicula: null, 
+      pelicula: null,
     };
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params; 
+    const { id } = this.props.match.params;
 
     fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
       .then(response => response.json())
       .then(data => {
-        this.setState({ pelicula: data }); 
+        this.setState({ pelicula: data });
       })
       .catch(error => console.log(error));
   }

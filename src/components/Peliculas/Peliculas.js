@@ -42,12 +42,12 @@ class Peliculas extends Component {
 
                 <section>
                     <h2>{this.props.title}</h2>
-                
+
                     {this.props.link && (
                         <Link to={this.props.link}>
                             <button> Ver todas </button>
                         </Link>)
-                        }
+                    }
                     <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula, index) => index < 5)} />
                 </section>
 
