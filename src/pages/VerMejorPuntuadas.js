@@ -1,69 +1,70 @@
-{/*   import React, { Component } from 'react'
-        import {options} from "../options";
-        import PeliculaGrid from "../components/PeliculaGrid/PeliculaGrid";
+import React, { Component } from 'react'
+import { options } from "../options";
+import PeliculaGrid from "../components/PeliculaGrid/PeliculaGrid";
+import Loader from '../components/Loader/Loader';
+export default class VerMejorPuntuadas extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: 1,
+      peliculas: [],
+      PelisFiltradas: [],
+      filterValue: "",
+      loading: true
+    }
+  }
+  
+  componentDidMount() {
+    fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.value}`, options)
+      .then(response => response.json())
+      .then(data => this.setState({ peliculas: data.results, PelisFiltradas: data.results, loading: false}))
+      .catch((error) => {this.setState({ loading: false })
+      console.log(error)
 
-        export default class VerMejorPuntuadas extends Component {
-            constructor(props){
-                super(props)
-                this.state ={
-                    value: 1,
-                    peliculas:[],
-                    peliculasFiltrado:[],
-                    filtro:""
-                }
-            }
+      });
+      }
 
-            handleFilterChange(){
-                this.setState({
-                peliculasFiltrado: peliculas.filter(peliculas => peliculas.title.includes(this.state.filtro) )
-                })
-                };
+     
 
-            handleInputSubmit(){
-                    this.props.history.push('/VerMejorPuntuadas', {filtro:this.state.filtro})
-                    
-                };
-            handleInputChange(e){
-                    this.setState({
-                    filtro: e.target.value
-                
-                    })
-                }
-            
-            
-
-            handleIncrement() {
-                const mas = this.state.value + 1;
-                fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${mas}`, options)
-                .then(response => response.json())
-                .then(data => this.setState(pelisAntes => ({
-                    peliculas: [...pelisAntes.peliculas, ...data.results], 
-                    value: mas 
-                })))
-                .catch(error => console.log(error));
-            };
-                
-            componentDidMount(){
-                fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.value}`, options)
-                .then(response => response.json())
-                .then(data => this.setState({peliculas:data.results}))
-
-                .catch(error => console.log(error));
-                }
+handleFilterChange(e){
+  const userValue = e.target.value
+  this.setState({
+    filterValue: userValue,
+    PelisFiltradas: this.state.peliculas.filter(peliculas => peliculas.title.toLowerCase().includes(userValue.toLowerCase()))
+  })
+}
+handleResetFilter(){
+  this.setState({
+    filterValue: "",
+    PelisFiltradas: this.state.peliculas
+  })
+}
+  render() {
+    if (this.state.loading){
+        return <Loader/>
         
-            
-        render() {
-            return (
+    } 
+    else if(this.state.PelisFiltradas.length === 0 ){
+
+        return (<div>
+        <input type="text" onChange={(e)=> this.handleFilterChange(e)} value= {this.state.filterValue}/>
+        <button onClick={()=> this.handleResetFilter()}>Resetear Filtro</button>
+        <p>  No encontramos resultados de busqueda </p>
+        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
+
+
+    }
+    else{
+        return (
             <>
-                <input onChange={this.handleFilterChange(e)} type='text ' name='filter' value={this.state.filtro}/> 
-                <button onClick={()=> this.handleInputSubmit()}> Filtrar </button>
-                <PeliculaGrid peliculas= {this.state.peliculas}/>
-
-                <button onClick={() => this.handleIncrement() }>Ver mas</button>
-
-                
+              <h1>Peliculas Mejores Puntuadas</h1>
+              <input type="text" onChange={(e)=> this.handleFilterChange(e)} value= {this.state.filterValue}/>
+              <button onClick={()=> this.handleResetFilter()}>Resetear Filtro</button>
+              <PeliculaGrid peliculas={this.state.PelisFiltradas} />
             </>
-            )
-        }
-}  */ }
+          )
 
+    }
+   
+  }
+}

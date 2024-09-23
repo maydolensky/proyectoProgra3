@@ -1,3 +1,24 @@
-.formBusqueda{ 
-    margin: 30px;
-}
+.formBusqueda {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    margin: 10px ;
+  }
+  
+  .formBusqueda input {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 25px; 
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .formBusqueda button {
+    padding: 15px; 
+    font-size: 20 px; 
+    margin-left: 10px; 
+    border: none;
+    background-color: #f04a5a; 
+    color: white;
+    border-radius: 8px;
+  }

@@ -24,7 +24,7 @@ export class SearchForm extends Component {
   render() {
     console.log(this.state.query)
     return (
-      <div>
+      <div className="formBusqueda">
 
         <input onChange={(e) => this.handleInputChange(e)} type='text' name='query' value={this.state.query} />
 
