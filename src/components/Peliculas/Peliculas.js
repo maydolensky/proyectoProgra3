@@ -1,18 +1,18 @@
-import {Component} from "react";
+import { Component } from "react";
 import PeliculaGrid from "../PeliculaGrid/PeliculaGrid";
 import { options } from "../../options";
 
 import { Link } from "react-router-dom";
 
-class Peliculas extends Component{
-    constructor(props){
+class Peliculas extends Component {
+    constructor(props) {
         super(props)
-        this.state ={
+        this.state = {
             peliculas: [],
             peliculasFavoritas: [],
         }
     }
-    
+
     componentDidMount() {
         if (this.props.favoritosIds && this.props.favoritosIds.length > 0) {
             Promise.all(
@@ -21,10 +21,10 @@ class Peliculas extends Component{
                         .then(response => response.json())
                 )
             )
-            .then(favoritas => {
-                this.setState({ peliculasFavoritas: favoritas });
-            })
-            .catch(error => console.log(error));
+                .then(favoritas => {
+                    this.setState({ peliculasFavoritas: favoritas });
+                })
+                .catch(error => console.log(error));
         } else {
             fetch(this.props.url, options)
                 .then(response => response.json())
@@ -34,27 +34,26 @@ class Peliculas extends Component{
                 .catch(error => console.log(error));
         }
     }
-    render (){
+    render() {
         const { peliculasFavoritas, peliculas } = this.state;
-
-        if (this.props.favoritosIds && peliculasFavoritas.length === 0) {
-            return <p>No tienes películas favoritas aún.</p>;
-        }
 
         return (
             <>
 
                 <section>
                     <h2>{this.props.title}</h2>
-                    <Link to= {this.props.link}>
-                        <button> Ver todas </button>
-                    </Link>
-                <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula,index) => index <5 )} /> 
+                
+                    {this.props.link && (
+                        <Link to={this.props.link}>
+                            <button> Ver todas </button>
+                        </Link>)
+                        }
+                    <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula, index) => index < 5)} />
                 </section>
 
             </>
         )
     }
-   
+
 };
 export default Peliculas 

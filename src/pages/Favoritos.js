@@ -21,10 +21,10 @@ class Favoritos extends Component {
         return (
             <div>
                 {favoritosIds.length === 0 ? (
-                    <p>No tienes películas favoritas aún.</p>
+                    <p>Aún no tienes películas favoritas</p>
                 ) : (
                     <Peliculas
-                        title="Nis películas favoritas"
+                        title="Mis películas favoritas"
                         favoritosIds={favoritosIds}  
                     />
                 )}

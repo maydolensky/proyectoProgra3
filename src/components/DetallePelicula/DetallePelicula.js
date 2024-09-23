@@ -25,7 +25,7 @@ class DetallePelicula extends Component {
     const { pelicula } = this.state;
 
     if (!pelicula) {
-      return <p>Cargando detalles .</p>; // Mer: Agregar loader
+      return <p>Cargando detalles.</p>; // Mer: Agregar loader
     }
 
     return (
