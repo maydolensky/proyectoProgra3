@@ -3,7 +3,7 @@ import "./Footer.css"
 
 function Footer() {
     return (
-        <footer className="Footer">
+        <footer className="footer">
             <p>Maia Dolensky</p>
             <p>Mercedes Lapasset</p>
             <p>Lila Yasuff</p>
