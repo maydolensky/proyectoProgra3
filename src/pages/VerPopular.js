@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { options } from "../options";
 import PeliculaGrid from "../components/PeliculaGrid/PeliculaGrid";
 import Loader from '../components/Loader/Loader';
+import '../components/SearchForm/SearchForm.css'
 
 export default class VerPopular extends Component {
   constructor(props) {

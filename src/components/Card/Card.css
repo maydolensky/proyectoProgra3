@@ -1,11 +1,10 @@
 .pelis-card {
     background-color: #314991;
-
     border: none;
     border-radius: 10px;
     width: 200px;
     padding: 20px;
-    margin: 20px;
+    margin: 30px;
     box-sizing: border-box;
 }
 .pelis-card h4{
@@ -43,6 +42,7 @@
     cursor: pointer;
     margin-bottom: 10px;
 }
+
 .button:hover {
     background-color: #224c78;
 }

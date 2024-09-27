@@ -2,6 +2,7 @@ import { Component } from "react";
 import PeliculaGrid from "../PeliculaGrid/PeliculaGrid";
 import { options } from "../../options";
 import Loader from "../Loader/Loader";
+import "./Peliculas.css"
 
 import { Link } from "react-router-dom";
 
@@ -58,7 +59,7 @@ class Peliculas extends Component {
     
                         {this.props.link && (
                             <Link to={this.props.link}>
-                                <button> Ver todas </button>
+                                <button className="button_pelis"> Ver todas </button>
                             </Link>)
                         }
                         <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula, index) => index < 5)} />
