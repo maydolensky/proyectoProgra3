@@ -1,5 +1,5 @@
 
-footer{
+footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10,7 +10,8 @@ footer{
     position: relative;
     font-size: 18px;
     gap: 30px;
-
+    width: 100vw; 
+    margin-left: -20px; 
 }
 
 footer p {
