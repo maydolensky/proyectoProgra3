@@ -7,7 +7,7 @@ function Navbar(props) {
     return (
         <nav>
             <ul className="user">
-                <li> <img src="./img/pelis+.png" alt="" /></li>
+                <li> <img src="/img/pelis+.png" alt="" /></li>
             </ul>
             <ul className="main-nav">
                 {props.elementosMenu.map((unMenu, idx) => (
