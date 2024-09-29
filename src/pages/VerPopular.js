@@ -75,7 +75,7 @@ export default class VerPopular extends Component {
         <>
           <h1>Peliculas Populares</h1>
           <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
-          <button onClick={() => this.handleResetFilter()}>Reset Filter</button>
+          <button onClick={() => this.handleResetFilter()}>Filtrar</button>
           <PeliculaGrid peliculas={this.state.PelisFiltradas} />
           <button onClick={() => this.handleIncrement()}>Ver mas</button>
         </>

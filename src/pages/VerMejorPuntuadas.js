@@ -74,7 +74,7 @@ export default class VerMejorPuntuadas extends Component {
                 <>
                     <h1>Peliculas Mejores Puntuadas</h1>
                     <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
-                    <button onClick={() => this.handleResetFilter()}>Resetear Filtro</button>
+                    <button onClick={() => this.handleResetFilter()}>Filtrar</button>
                     <PeliculaGrid peliculas={this.state.PelisFiltradas} />
                     <button onClick={() => this.handleIncrement()}>Ver mas</button>
 
