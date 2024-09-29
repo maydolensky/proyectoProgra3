@@ -20,13 +20,15 @@ footer p {
     flex-wrap: wrap;
     align-items: center;
 }
+
 @media (max-width: 360px) {
-    .footer {
+    footer {
         padding: 15px; 
-        height: auto; 
+        font-size: 12px; 
+        width: 93,5vw
     }
 
-    .footer p {
+    footer p {
         font-size: 12px;
     }
     

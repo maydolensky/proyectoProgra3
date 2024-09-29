@@ -1,15 +1,15 @@
 .button_pelis {
-    background-color: #4B4B4B; /* Color gris */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    cursor: pointer; /* Cursor tipo puntero */
-    margin-bottom: 10px; /* Margen inferior */
+    background-color: #4B4B4B; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    margin-bottom: 10px; 
     transition: background-color 0.3s ease; /* Efecto de transición */
 }
 
 .button_pelis:hover {
-    background-color: #7D7D7D; /* Color gris más claro al pasar el ratón */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+    background-color: #7D7D7D; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }

@@ -1,0 +1,19 @@
+.favorite-button {
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    padding: 10px; 
+}
+
+.favorite-button:hover {
+    transform: scale(1.2); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.favorite-button svg {
+    transition: fill 0.3s ease; 
+}
+
+.favorite-button svg:hover {
+    fill: #ff5555; 
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import './FavButton.css'
 
 class FavButton extends Component {
     constructor(props) {
