@@ -17,6 +17,9 @@ nav, footer {
     font-family: 'Montserrat', sans-serif;
 
 }
+main {
+    padding-bottom: 100px; 
+}
 .no_hay_resultados {
     color: #fff;
     font-size: 20px; 

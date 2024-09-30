@@ -19,7 +19,7 @@ class Card extends Component {
         })
     }
 
-    render(props) {
+    render() {
         const { pelicula } = this.props
 
         return (
