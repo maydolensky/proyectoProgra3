@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { options } from '../options'
 import PeliculaGrid from '../components/PeliculaGrid/PeliculaGrid'
-import { FaSleigh } from 'react-icons/fa'
 import Loader from '../components/Loader/Loader'
 
 export default class SearchResults extends Component {
@@ -39,7 +38,7 @@ export default class SearchResults extends Component {
       )
     } else {
       return (<div> <p>  No encontramos resultados de busqueda de:  {this.props.location.state.query} </p>
-        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
+        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600"  title='gif de patricio' allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
 
     }
 
