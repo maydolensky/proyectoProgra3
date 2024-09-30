@@ -62,7 +62,7 @@ class Peliculas extends Component {
                                 <button className="button_pelis"> Ver todas </button>
                             </Link>)
                         }
-                        <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula, index) => index < 5)} />
+                        <PeliculaGrid peliculas={peliculasFavoritas.length > 0 ? peliculasFavoritas : peliculas.filter((pelicula, index) => index < 4)} />
                     </section>
     
                 </>
