@@ -3,6 +3,7 @@ import FavButton from '../FavButton/FavButton';
 import { options } from '../../options';
 import './DetallePelicula.css'
 import Loader from '../Loader/Loader';
+import NotFound from '../../pages/NotFound';
 
 class DetallePelicula extends Component {
   constructor(props) {
@@ -10,19 +11,31 @@ class DetallePelicula extends Component {
     this.state = {
       pelicula: null,
       loading: true,
+      error: false,
     };
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
 
+    const isNumeric = id.split('').every(character => character >= '0' && character <= '9'); //verifico si cada compomemte de la ruta después de la / es un número, en caso contrario va a notFound
+    
+    if (!isNumeric) {
+      this.setState({ error: true, loading: false });
+      return <NotFound />;
+    }
+
     fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
       .then(response => response.json())
       .then(data => {
-        this.setState({ pelicula: data, loading: false});
+        if (data.success === false) {
+          this.setState({ error: true, loading: false });
+        } else {
+          this.setState({ pelicula: data, loading: false });
+        }
       })
       .catch((error) => {
-        this.setState({ loading: false })
+        this.setState({ error: true, loading: false })
         console.log(error)
       });
   }
@@ -30,9 +43,10 @@ class DetallePelicula extends Component {
   render() {
     const { pelicula } = this.state;
 
-
     if (this.state.loading) {
-      return <Loader/>
+      return <Loader />
+    } else if (this.state.error || !pelicula) {
+      return <NotFound />;
     } else {
       return (
 
@@ -43,10 +57,11 @@ class DetallePelicula extends Component {
           <p><strong>Fecha de estreno:</strong> {pelicula.release_date}</p>
           <p><strong>Duración:</strong> {pelicula.runtime} minutos</p>
           <p><strong>Sinopsis:</strong> {pelicula.overview}</p>
-          <p><strong>Género:</strong> {pelicula.genres.map(g => g.name).join(', ')}</p>
+          <p><strong>Género:</strong> {pelicula.genres.map(genre => genre.name).join(', ')}</p>
           <FavButton idPelicula={pelicula.id} />
         </div>
-      );  }
+      );
+    }
   }
 }
 

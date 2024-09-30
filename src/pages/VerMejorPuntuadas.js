@@ -88,7 +88,7 @@ export default class VerMejorPuntuadas extends Component {
                     <button onClick={() => this.handleResetFilter()}>Resetear</button>
                     </div>
                     <PeliculaGrid peliculas={this.state.PelisFiltradas} />
-                    <button onClick={() => this.handleIncrement()}>Ver mas</button>
+                    <button className='button' onClick={() => this.handleIncrement()}>Ver mas</button>
 
                 </>
             )

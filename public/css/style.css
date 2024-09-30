@@ -17,14 +17,17 @@ nav, footer {
     font-family: 'Montserrat', sans-serif;
 
 }
+
 main {
     padding-bottom: 100px; 
 }
+
 .no_hay_resultados {
     color: #fff;
     font-size: 20px; 
     text-align: center;
 }
+
 .iframe-container{
 
     margin-top: 40px;
@@ -39,6 +42,24 @@ iframe {
     height: 50%;
     
 }
+
+.not_found_container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.not_found_img {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
 .link {
     display: none;
 }

@@ -20,8 +20,6 @@
     margin-bottom: 12 px;
 }
 
-
-
 .show {
     display: block;
     font-size: 0.9rem;
@@ -46,8 +44,6 @@
 .button:hover {
     background-color: #224c78;
 }
-
-
 
 .cards_container {
     display: flex;

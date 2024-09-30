@@ -15,8 +15,7 @@ function App() {
     { name: 'Home', link: '/' },
     { name: 'Favoritos', link: '/Favoritos' },
     { name: 'Populares', link: '/VerPopular' },
-    { name: 'Mejores Puntuadas', link: '/VerMejorPuntuadas' },
-    //Preguntar si hay que agregar 'nombreGrupo', 
+    { name: 'Mejores Puntuadas', link: '/VerMejorPuntuadas' }, 
 
   ]
   return (
@@ -26,11 +25,11 @@ function App() {
         <main>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/VerPopular"  component={VerPopular} />
-            <Route path="/VerMejorPuntuadas"  component={VerMejorPuntuadas} />
-            <Route path="/Detalle/id/:id"  component={Detalle} />
-            <Route path="/Favoritos"  component={Favoritos} />
-            <Route path="/SearchResults"  component={SearchResults} />
+            <Route path="/VerPopular" exact component={VerPopular} />
+            <Route path="/VerMejorPuntuadas" exact component={VerMejorPuntuadas} />
+            <Route path="/Detalle/:id" exact component={Detalle} />
+            <Route path="/Favoritos" exact component={Favoritos} />
+            <Route path="/SearchResults" exact component={SearchResults} />
             <Route component={NotFound} />
 
           </Switch>

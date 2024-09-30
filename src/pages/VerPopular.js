@@ -96,7 +96,7 @@ export default class VerPopular extends Component {
 
           </div>
           <PeliculaGrid peliculas={this.state.PelisFiltradas} />
-          <button onClick={() => this.handleIncrement()}>Ver mas</button>
+          <button className='button' onClick={() => this.handleIncrement()}>Ver mas</button>
         </>
       )
 

@@ -44,10 +44,7 @@ class FavButton extends Component {
 
     render() {
         return (
-            <button
-                onClick={() => this.state.esFav ? this.sacarFavs() : this.agregarFavs()}
-                className="favorite_button"
-            >
+            <button onClick={() => this.state.esFav ? this.sacarFavs() : this.agregarFavs()} className="favorite_button">
                 {this.state.esFav ? <FaHeart size={20} color="red" /> : <FaRegHeart size={20} />}
             </button>
         );

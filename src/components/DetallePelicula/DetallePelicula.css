@@ -41,13 +41,13 @@
 
 @media (max-width: 360px) {
     .detalle_pelicula {
-        padding: 10px; /* Reduce el padding para pantallas pequeñas */
-        width: 90%; /* Deja margen a los costados para centrarla mejor */
-        margin: 10px auto; /* Centra la tarjeta horizontalmente */
+        padding: 10px; 
+        width: 90%; 
+        margin: 10px auto; 
     }
 
     .detalle_pelicula h3 {
-        font-size: 18px; /* Ajusta el tamaño del texto */
+        font-size: 18px; 
     }
 
     .detalle_pelicula p {
