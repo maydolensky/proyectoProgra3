@@ -1,4 +1,4 @@
-.detalle-pelicula {
+.detalle_pelicula {
     background-color: #314991;
     border-radius: 10px;
     max-width: 500px; 
@@ -9,7 +9,7 @@
     width: 100%;; 
 }
 
-.detalle-pelicula img {
+.detalle_pelicula img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -17,48 +17,48 @@
     margin-top: 15px;
 }
 
-.detalle-pelicula h3 {
+.detalle_pelicula h3 {
     font-size: 1.8em;
     margin-bottom: 8px; 
     color: #fffefe;
 }
 
-.detalle-pelicula p {
+.detalle_pelicula p {
     font-size: 1.1em; 
     margin-bottom: 8px; 
     color: #e3dbdb;
 }
 
-.detalle-pelicula p strong {
+.detalle_pelicula p strong {
     font-weight: bold;
     color: #e3dbdb;
 }
 
-.detalle-pelicula .fav-button {
+.detalle_pelicula .fav-button {
     margin-top: 15px; 
     background-color: #4B4B4B;
 }
 
 @media (max-width: 360px) {
-    .detalle-pelicula {
+    .detalle_pelicula {
         padding: 10px; /* Reduce el padding para pantallas pequeñas */
         width: 90%; /* Deja margen a los costados para centrarla mejor */
         margin: 10px auto; /* Centra la tarjeta horizontalmente */
     }
 
-    .detalle-pelicula h3 {
+    .detalle_pelicula h3 {
         font-size: 18px; /* Ajusta el tamaño del texto */
     }
 
-    .detalle-pelicula p {
+    .detalle_pelicula p {
         font-size: 12px;
     }
 
-    .detalle-pelicula img {
+    .detalle_pelicula img {
         margin-bottom: 8px;
     }
 
-    .detalle-pelicula .fav-button {
+    .detalle_pelicula .fav-button {
         margin-top: 10px;
         font-size: 14px;
     }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import "./Navbar.css"
+import "./Navbar.css";
+
 
 class Navbar extends Component {
     constructor(props){
@@ -19,7 +20,7 @@ render (){
     return (
         <nav>
             <ul className="user">
-                <li> <img src="/img/pelis+.png" alt="" /></li>
+                <li> <img src="/img/Movies.png" alt="" /></li>
             </ul>
             <div className = {`menu-icon ${this.state.desplegable ? "active": ""}`}onClick={this.handleDesplegable}>
                 <i className='fas fa-bars'></i>

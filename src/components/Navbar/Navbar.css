@@ -20,6 +20,7 @@ nav {
     display: flex;
     gap: 20px;
     flex-wrap: wrap; 
+
 }
   
   .main-nav li {
@@ -47,13 +48,14 @@ nav {
 
   @media (max-width: 360px) {
     .main-nav {
-    display: none;
+      display: none;
       flex-direction: column;
       background-color: #141b29;
       position: absolute;
       top: 60px;
       right: 0;
       padding: 10px;
+  
 
     }
   

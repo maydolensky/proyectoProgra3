@@ -36,7 +36,7 @@ class DetallePelicula extends Component {
     } else {
       return (
 
-        <div className="detalle-pelicula">
+        <div className="detalle_pelicula">
           <img src={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`} alt={pelicula.title} />
           <h3>{pelicula.title}</h3>
           <p><strong>Calificación:</strong> {pelicula.vote_average}</p>

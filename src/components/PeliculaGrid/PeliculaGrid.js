@@ -5,7 +5,7 @@ const PeliculaGrid = (props) => {
     console.log("Películas recibidas en PeliculaGrid:", props.peliculas); // Verificar las películas recibidas
 
     return (
-        <section className="cards-container">
+        <section className="cards_container">
             {props.peliculas.length > 0 ?
                 props.peliculas.map((pelicula, index) => (<Card pelicula={pelicula} key={index} />))
                 : <>

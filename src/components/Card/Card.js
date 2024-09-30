@@ -24,7 +24,7 @@ class Card extends Component {
 
         return (
 
-            <div className="pelis-card">
+            <div className="pelis_card">
                 <Link to={`/Detalle/id/${pelicula.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w300/${this.props.pelicula.poster_path}`} alt={this.props.pelicula.title} />
                 </Link>
