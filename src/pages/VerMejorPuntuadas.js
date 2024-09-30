@@ -65,14 +65,14 @@ export default class VerMejorPuntuadas extends Component {
                 <h1>Peliculas Mejores Puntuadas</h1>
                 <div className='form_busqueda'> 
                 <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
-                <button onClick={() => this.handleResetFilter()}>Resetear Filtro</button>
+                <button onClick={() => this.handleResetFilter()}>Resetear</button>
 
                 </div>
                 <div className='iframe-container'> 
                 
                 <p className='no_hay_resultados'>  No encontramos resultados de busqueda </p>
                 <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" className='responsive-iframe' title='gif de patricio' ></iframe>
-                <p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p>
+                <p><a className='link' href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"> gif patricio</a></p>
                 </div>
 
                  </div>)

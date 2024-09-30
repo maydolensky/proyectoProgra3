@@ -22,7 +22,6 @@ export class SearchForm extends Component {
 
 
   render() {
-    console.log(this.state.query)
     return (
       <div className="form_busqueda">
 

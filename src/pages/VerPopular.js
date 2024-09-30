@@ -73,7 +73,8 @@ export default class VerPopular extends Component {
         <div className='iframe-container'> 
 
         <p className='no_hay_resultados'>  No encontramos resultados de busqueda </p>
-        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna"  className='responsive-iframe'  title='gif de patricio' ></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> 
+        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna"  className='responsive-iframe'  title='gif de patricio' ></iframe><p>
+        <a className='link' href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna">  gif patricio </a></p> 
        
         </div>
 

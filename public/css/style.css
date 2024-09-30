@@ -36,6 +36,9 @@ iframe {
     height: 50%;
     
 }
+.link {
+    display: none;
+}
 @media (max-width: 360px) {
     
     .no_hay_resultados {
