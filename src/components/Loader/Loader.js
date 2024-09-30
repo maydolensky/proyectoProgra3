@@ -1,10 +1,13 @@
 import React from 'react'
+import "./Loader.css"
 
 const Loader = () => {
   return (
-    <>
-        <iframe src="https://giphy.com/embed/I35sKRqcrxHDIAbIEs" title="Descripción del contenido del iframe" width="480" height="480" class="giphy-embed" allowFullScreen></iframe>
-        <p><a href="https://giphy.com/gifs/cartoon-popcorn-lurk-I35sKRqcrxHDIAbIEs">""</a></p></>
+    <div className='loader-container'>
+
+    <img src='/img/loader.gif' alt='loader'/>  
+
+    </div>
   )
 }
 

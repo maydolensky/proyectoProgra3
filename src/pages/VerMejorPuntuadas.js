@@ -62,14 +62,20 @@ export default class VerMejorPuntuadas extends Component {
         else if (this.state.PelisFiltradas.length === 0) {
 
             return (<div>
+                <h1>Peliculas Mejores Puntuadas</h1>
                 <div className='form_busqueda'> 
                 <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
                 <button onClick={() => this.handleResetFilter()}>Resetear Filtro</button>
 
                 </div>
+                <div className='iframe-container'> 
                 
-                <p>  No encontramos resultados de busqueda </p>
-                <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600"  title='gif de patricio' allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
+                <p className='no_hay_resultados'>  No encontramos resultados de busqueda </p>
+                <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" className='responsive-iframe' title='gif de patricio' ></iframe>
+                <p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p>
+                </div>
+
+                 </div>)
 
 
         }
@@ -78,7 +84,7 @@ export default class VerMejorPuntuadas extends Component {
                 <>
                     <h1>Peliculas Mejores Puntuadas</h1>
                     <div className='form_busqueda'> 
-                    <input type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
+                    <input placeholder='Filtrar' type="text" onChange={(e) => this.handleFilterChange(e)} value={this.state.filterValue} />
                     <button onClick={() => this.handleResetFilter()}>Resetear</button>
                     </div>
                     <PeliculaGrid peliculas={this.state.PelisFiltradas} />

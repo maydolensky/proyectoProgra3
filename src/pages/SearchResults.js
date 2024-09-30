@@ -33,12 +33,16 @@ export default class SearchResults extends Component {
       return <Loader/>
     } else if (this.state.peliculas.length > 0) {
       return (
-        <> <div> Resultados de busqueda para:  {this.props.location.state.query}</div>
+        <> <div className='no_hay_resultados'> Resultados de busqueda para:  {this.props.location.state.query}</div>
           <PeliculaGrid peliculas={this.state.peliculas} /></>
       )
     } else {
-      return (<div> <p>  No encontramos resultados de busqueda de:  {this.props.location.state.query} </p>
-        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="600" height="600"  title='gif de patricio' allowFullScreen></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> </div>)
+      return (
+        <div className="iframe-container" > 
+        <p className='no_hay_resultados'>  No encontramos resultados de busqueda de:  {this.props.location.state.query} </p>
+        <iframe src="https://giphy.com/embed/OPU6wzx8JrHna"  className="responsive-iframe" title='gif de patricio' ></iframe><p><a href="https://giphy.com/gifs/spongebob-squarepants-sad-OPU6wzx8JrHna"></a></p> 
+        
+        </div>)
 
     }
 
